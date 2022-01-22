@@ -36,7 +36,7 @@ const App = () => {
                 <div className="container">
                     <div className="box">
                         <h1>TVmaze</h1> 
-                        <h3>search for Your Favourite Shows</h3> 
+                        <h3 className='mid'>search for Your Favourite Shows</h3> 
                         <div className='inline'>
                             <input type="radio" name='search' value='people' onClick={handleCategory}/> 
                             <label htmlFor="search">Actors</label>

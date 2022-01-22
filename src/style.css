@@ -42,7 +42,9 @@
     /* padding: 2rem; */
     gap: 2rem;
 }
-
+.mid{
+    text-align: center;
+}
 .inline>label{
     margin-right: 1rem;
 }
