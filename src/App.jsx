@@ -45,9 +45,9 @@ const App = () => {
                             <label htmlFor="search">Shows</label>
                         </div>
                         <h5>Enter {searchCategory} Below</h5>
-                        <input type="text" id='input'  
+                        {searchCategory.length>0&&<input type="text" id='input'  
                         placeholder={searchCategory==='people'?'eg: Tom Cruise':'eg: friends'} 
-                        onChange={handleChange} value={searchItem}/>
+                        onChange={handleChange} value={searchItem}/>}
                         {myData.length>0?<p>search reslts for {searchItem}</p>:<p>Nothing Found</p>}
                     </div>
                 </div>
