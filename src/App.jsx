@@ -18,14 +18,14 @@ const App = () => {
                 setMyData(await response.json())
                 // e.target.value=''
     }
-    function handlePeopleCategory(){
-        setSearchCategory('people')
+    function handleCategory(e){
+        setSearchCategory(e.target.value)
         setMyData([])
     }
-    function handleShowCategory(){
-        setSearchCategory('shows')
-        setMyData([])
-    }
+    // function handleCategory(){
+    //     setSearchCategory('shows')
+    //     setMyData([])
+    // }
     const data = searchCategory==='people'? myData.map(ele=>ele.person):myData.map(ele=>ele.show)
     console.log(data)
     
@@ -38,13 +38,15 @@ const App = () => {
                         <h1>TVmaze</h1> 
                         <h3>search for Your Favourite Shows</h3> 
                         <div className='inline'>
-                            <input type="radio" name='search' onClick={handlePeopleCategory}/> 
+                            <input type="radio" name='search' value='people' onClick={handleCategory}/> 
                             <label htmlFor="search">Actors</label>
-                            <input type="radio" name='search' onClick={handleShowCategory}/>
+                            <input type="radio" name='search' value='shows' onClick={handleCategory}/>
                             <label htmlFor="search">Shows</label>
                         </div>
                         <h5>Enter {searchCategory} Below</h5>
-                        <input type="text" id='input'  placeholder={searchCategory==='people'?'eg: Tom Cruise':'eg: friends'} onChange={handleChange}/>
+                        <input type="text" id='input'  
+                        placeholder={searchCategory==='people'?'eg: Tom Cruise':'eg: friends'} 
+                        onChange={handleChange}/>
                         {myData.length>0?<p>search reslts for {searchItem}</p>:<p>Nothing Found</p>}
                     </div>
                 </div>
